@@ -1,0 +1,110 @@
+fun main() {
+	
+    // LIST
+    // 1. Ordered collection
+    // 2. Multiple elements can be same or not unique( duplicate elements are allowed)
+    // 3. Can have as many different elements of differenet datatype
+    
+    
+    // 1. Immutable List - cannot change the values once declared
+    // syntax - listOf(), listOf<dataType>
+    // Operations are not allowed - add, remove or update
+    
+//     var myNumberList = listOf(1,2,3,2.3f,"five") // immutable list of any datatype
+//     var emptyIntList = listOf<Int>()  // how to create empty list
+//     var emptyList = listOf("") 
+//     println("Empty List $emptyList")
+    
+//     var mySameList = listOf<Int>(1,2,3,4,5,6) // immutable list of single datatype
+//     println(myNumberList)
+    
+//     println(myNumberList.get(4))
+//     println(myNumberList[4])
+    
+//     println(myNumberList[10])  // exception
+//     println(myNumberList.get(10)) // exception
+    
+//     println(myNumberList.getOrNull(10)) // null/none
+    
+//     println(myNumberList.indexOf(5))
+    
+//     var myRange = (0..10).toList()
+// 	println(myRange)    
+    
+    
+    
+    // SET (IMMUTABLE)
+    // 1. Duplicate elements cannot be stored
+    // 2. Every is unique
+    // 3. Unordered type of datatype
+    // syntax - setOf()
+    
+    // immutable set with different datatype
+//     var myImmutableSet = setOf(1,2,3,4, 2.3f, 3.666, 2,2,4,4,4,4,4, 1,1,1,9)
+//     println(myImmutableSet)
+    
+//     // immutable set with same datatype
+//     var mySameDatatype = setOf<Int>(1, 2, 1000, 100, 900)
+//     println(mySameDatatype)
+    
+//     // immutable empty set
+//     var myEmptySet = setOf<Int>()
+//     println(myEmptySet)
+    
+//     // contains - true/false
+//     println(mySameDatatype.contains(8822))
+    
+//    	// size - to check the size of the set
+//    	println(mySameDatatype.size)
+    
+//     var newList = mySameDatatype.toList()
+//     println(newList)
+ 
+//     // 1. union -  merge both the set
+// 	println(mySameDatatype union myImmutableSet)
+//     // intersection - common out
+//     println(mySameDatatype intersect myImmutableSet)
+//     // subtract - take all elements left side - those elements which are common / or not common
+//     println(mySameDatatype subtract myImmutableSet)
+//     println(myImmutableSet subtract mySameDatatype)    
+    
+    
+    
+    
+    // MAP (DICTIONARY)
+    
+    // 1. Key value pair
+    // 2. Key will always be unique, but value can be duplicated
+    // 3. Key -> will always be associated to a single value
+    // 4. Immutable, cannot chnage the size once defined. Add, remove()
+    // syntax - mapOf()
+    
+	var myMap = mapOf("One" to 1, "Two" to 2, "Three" to 3)    
+
+    println(myMap)
+    
+    // to check all the keys of the map
+    println(myMap.keys)
+    
+    // to check all the value of the map
+    println(myMap.values)
+    
+    // get()
+    println(myMap.get("Two"))
+    println(myMap.get("Five")) // null
+    
+    // []
+    println(myMap["Two"])
+    println(myMap["Five"])
+	
+    println(myMap.getOrDefault("Five", 0)) // provide default value if key is not found in the map
+    
+//     println(myMap.getValue("Three"))  // 3
+    println(myMap.getValue("Five"))  // exception
+    
+    
+}
+
+
+
+
