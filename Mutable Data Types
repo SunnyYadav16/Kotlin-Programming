@@ -1,0 +1,127 @@
+fun main() {
+    
+//     // LIST (MUTABLE)
+//     // We can perform read as well as write operations on the list.
+    
+    // MUTABLE LIST of DIFFERENT DATATYPE
+   	var myList = mutableListOf("One", 2, "Three", 4.0, 5.0f)
+    println(myList)
+    
+    // same data type list
+    var sameDataList = mutableListOf<String>("1", "2", "3")
+    println(sameDataList)
+    
+    // add values into list
+    myList.add("Six")
+    println(myList)
+    
+    // remove values from list
+    myList.remove("Six")
+    println(myList)
+    
+    // get()
+    println(myList.get(2))
+//     println(myList.get(10)) // error/exception
+    
+    // using indexing
+    println(myList[2])
+    //println(myList[10]) // exception/ error
+    
+    
+    // update the value
+    myList[3] = "Four"
+    println(myList)
+    
+//     myList.set(index, value)
+	myList.set(3, 4.0f)
+    println(myList)
+    
+    
+    //.contains() // to check if the value exists in the list or not
+    // true / false
+    println(myList.contains("Ones"))
+    
+    // contains in if-else if-else statements
+    if (myList.contains("Ones")) {
+        println("Yes it exist")
+    } else {
+        println("No it doesn't")
+    }
+    
+   // loop on mutable list
+   for (item in myList){
+       println(item)
+   }
+    
+    
+    // SET (MUTABLE)
+    // does not allow duplicate values
+    // we can perform read and write operations
+    
+    
+    // multiple datatypes can be used
+    var mySet = mutableSetOf("One", 2, "Three", 2, "One", 4.0f, 5.1, 4.0f, 2, "2", "1", 1)
+    println(mySet)
+    
+    // single datatype of set
+    var mySameData = mutableSetOf<Int>(1,2,3,4,5,1,2,3,4,5)
+//     var mySameData = mutableSetOf<String>("1", "2", "3", "1")
+	println(mySameData)
+    
+    // empty set create
+    var myEmptySet = mutableSetOf<Int>()
+    println(myEmptySet)
+    
+    // add into set
+    myEmptySet.add(10)
+    println(myEmptySet)
+    
+    // remove from set
+    myEmptySet.remove(10)
+    println(myEmptySet)
+    
+    // add multiple values into the set
+    myEmptySet += listOf(1,2,3,4,5)
+    println(myEmptySet)
+    
+    // indexOf() - check the index of any value, return -1 if not present
+    println(myEmptySet.indexOf(10))
+    
+    // elementAt() - check the element at a particular index, return exception if index not present
+    println(myEmptySet.elementAt(10))
+
+    
+    // MAP (MUTABLE)
+    // key value pair. KEY always unique and value can be duplicate
+    // we can read and write operations
+    
+    
+    // mutable map of different datatype
+    var myMap = mutableMapOf(1 to "Sunday", 2 to "Monday", "Monday" to 3)
+    println(myMap)
+    
+    // mutable map of same datatype
+    var mySameData = mutableMapOf<Int, String>(1 to "Sunday", 2 to "Monday")
+    println(mySameData)
+    
+    println(mySameData.keys)
+    println(mySameData.values)
+    
+    // access values
+    println(mySameData[1])
+    println(mySameData[2])
+    
+    // update values
+    mySameData[1] = "thursday"
+    println(mySameData)
+    
+    // add values
+    mySameData[3] = "Saturday"
+    println(mySameData)
+    
+    // remove
+    mySameData.remove(1)
+    println(mySameData)
+    
+   
+}
