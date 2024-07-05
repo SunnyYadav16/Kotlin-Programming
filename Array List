@@ -1,0 +1,74 @@
+fun main() {
+   
+    
+    // ARRAY LIST
+    
+    // 1. ArrayList - Class from Java Library
+    // 2. arrayListOf() - Kotlin provides us this method
+    
+    // 1. ArrayList - We can create empty arraylist, or either we can create an array list of particular capacity
+    // 2. arrayListOf - We can pass initial elements to it directly while creating it.
+    
+    // 1. ArrayList - ArrayList<Int>(), ArrayList<Int>(10)
+    // 1.arrayListOf - arrayListOf(1,2,3, "One", 12.2f), arrayListOf<Int>()
+    
+    
+    
+    // create an empty Array List
+    var myEmptyArrayList = ArrayList<String>()
+    println(myEmptyArrayList)
+    
+    
+    // create an array list of capacity
+    var capacityArrayList = ArrayList<Int>(5)
+    println(capacityArrayList)
+    
+    
+    // create an array list using collections (list - listOf, mutableListOf, set - setOf, mutableSetOf)
+    var collectionArrayList = ArrayList(listOf(1,2,3,4,5))
+    println(collectionArrayList)
+    
+    
+    // add data into array list
+    myEmptyArrayList.add("Royal")
+    myEmptyArrayList.add("Technosoft")
+    myEmptyArrayList.add("Royal")
+    myEmptyArrayList.add("Technosoft")
+    myEmptyArrayList.add("Royal")
+    myEmptyArrayList.add("Technosoft")
+    println(myEmptyArrayList)
+    
+    
+    // remove the 1st occurence elements from arrayList
+    myEmptyArrayList.remove("Technosoft")
+    println(myEmptyArrayList)
+    
+    
+    
+    // for loop
+    for (item in myEmptyArrayList) {
+        println(item)
+    }
+    
+    
+    var its = myEmptyArrayList.iterator()
+    
+    while(its.hasNext()) {
+        println(its.next())
+    }
+    
+    
+    // to clear out the array list completely
+//     myEmptyArrayList.clear()
+//     println(myEmptyArrayList)
+    
+    
+    // retrieve elements in array list
+    println(" Retrieve value - ${myEmptyArrayList.get(2)}")
+    
+    
+    
+    // to find the first occurence index based on element value, return -1 if not found
+    println(myEmptyArrayList.indexOf("Royals"))
+    
+}
