@@ -1,0 +1,80 @@
+fun main() {
+    
+    // ARRAYS
+ 
+    // create empty Array
+    var emptyArrayVar = arrayOf<String>()
+    var myEmptyArray = emptyArray<String>()
+    
+    println(myEmptyArray.contentToString())
+    
+    
+    // check size of array
+    var myArray = arrayOf(1,2,3,4,5)
+    println(myArray.size)
+    
+    // for loop on array
+//     for (item in myArray) {
+//         println("My items are $item")
+//     }
+    
+//     for (index in 0 until myArray.size) {
+//         println("At index $index, my value is ${myArray[index]}")
+//     }
+    
+    
+    // Try to use while loop to print this println("At index $index, my value is ${myArray[index]}")
+//     var index = 0
+//     while (index < myArray.size) {
+//          println("At index $index, my value is ${myArray[index]}")
+//          index++
+//     }
+
+	
+    // add another array, instead of single element
+	var mySecondArray = arrayOf(1,2,3,4,5)
+	myArray += mySecondArray
+    println(myArray.contentToString())
+
+	
+    // retrieve last and first elements
+    println(myArray.last())  // 5
+    println(myArray.first())  // 1
+    
+    
+    // to check an empty array - boolean value (true/false)
+    println(myArray.isEmpty())  // false
+    println(myEmptyArray.isEmpty())  // true
+    
+    
+  	// indexOf() - we have to pass the element and an index of that element is returned
+    // if the element does not exist, it will return -1
+    println(myArray.indexOf(100))
+
+    // sum of array
+    println(myArray.sum())
+    
+    
+    // when ever single dimension arrays is to be printed - use contentToString()
+    // when ever multi dimenstion (more than 1 dimension) arrays are to be printed - use contentDeepToString()
+    
+    
+    // multi dimensional arrays
+    
+    // 1. nested array (method 1)
+    
+//     var nestedArray = Array(2) { Array(2) { 0 }}
+//     println(nestedArray.contentDeepToString())
+    
+    
+    // 2. nested array (method 2)
+//     [ [1,2], [3,4] ]
+//     var nestedArray = arrayOf(arrayOf(1,2), arrayOf(3,4))
+//     println(nestedArray.contentDeepToString())
+    
+    
+    
+    // Exercise - [[[0, 0, 0], [0, 0, 0], [0, 0, 0]], [[0, 0, 0], [0, 0, 0], [0, 0, 0]]]
+    val mDArray = Array(2) {Array(3) {Array(3) {0}}}
+    println(mDArray.contentDeepToString())
+}
