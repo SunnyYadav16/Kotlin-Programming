@@ -1,74 +1,119 @@
 fun main() {
-   
+    
     
     // ARRAY LIST
-    
-    // 1. ArrayList - Class from Java Library
-    // 2. arrayListOf() - Kotlin provides us this method
-    
-    // 1. ArrayList - We can create empty arraylist, or either we can create an array list of particular capacity
-    // 2. arrayListOf - We can pass initial elements to it directly while creating it.
-    
-    // 1. ArrayList - ArrayList<Int>(), ArrayList<Int>(10)
-    // 1.arrayListOf - arrayListOf(1,2,3, "One", 12.2f), arrayListOf<Int>()
+    // 1. arrayListOf() - function (Kotlin)
+    // 2. ArrayList<> - class (Java)
     
     
-    
-    // create an empty Array List
-    var myEmptyArrayList = ArrayList<String>()
-    println(myEmptyArrayList)
+    // 1. arrayListOf(1,2,3, "2"), arrayListOf<String>("One","Two"), arrayListOf<String>()
+    // 2. ArrayList<Int>(), ArrayList<Int>(10) (this 10 is not an element, it is the capacity or size)
     
     
-    // create an array list of capacity
-    var capacityArrayList = ArrayList<Int>(5)
-    println(capacityArrayList)
+    // empty Array List
+    var emptyList = ArrayList<Int>()
+    println(emptyList)
+    
+    // empty list with 10 capacity
+    var emptyCapacityList = ArrayList<String>(10)
+    println(emptyCapacityList)
+    
+    // array list with data inserted using sequence
+    var elementList = ArrayList(setOf(1,2,3,4,5)) // listOf, mutableListOf, setOf, mutableSetOf
+    println(elementList)
+    
+    // add elements into ARRAYLIST
+    emptyCapacityList.add("1")
+    emptyCapacityList.add("2")
+    println("UPDATED ${emptyCapacityList}")
     
     
-    // create an array list using collections (list - listOf, mutableListOf, set - setOf, mutableSetOf)
-    var collectionArrayList = ArrayList(listOf(1,2,3,4,5))
-    println(collectionArrayList)
+    // remove elements from Array list
+    emptyCapacityList.remove("2")
+    println("UPDATED after removal ${emptyCapacityList}")
     
     
-    // add data into array list
-    myEmptyArrayList.add("Royal")
-    myEmptyArrayList.add("Technosoft")
-    myEmptyArrayList.add("Royal")
-    myEmptyArrayList.add("Technosoft")
-    myEmptyArrayList.add("Royal")
-    myEmptyArrayList.add("Technosoft")
-    println(myEmptyArrayList)
+    // remove using index
+    emptyCapacityList.removeAt(0)
+    println("UPDATED after removal using index ${emptyCapacityList}")
+
+    
+    // add elements into ARRAYLIST
+    emptyCapacityList.add("1")
+    emptyCapacityList.add("2")
+    emptyCapacityList.add("2")
+    emptyCapacityList.add("2")
+    emptyCapacityList.add("1")
+    println("Added ${emptyCapacityList}")
     
     
-    // remove the 1st occurence elements from arrayList
-    myEmptyArrayList.remove("Technosoft")
-    println(myEmptyArrayList)
+    // retrieve values from array list using index, get() method
+    println(emptyCapacityList.get(1))  // 1 is the index and output value will be its element (2 in this case)
+    println(emptyCapacityList[1])
+    
+    
+    // update values in arrayList
+    emptyCapacityList[0] = "Two"
+    println(emptyCapacityList)
+    
+    // using set() method
+    emptyCapacityList.set(1, "Hundred")
+    println(emptyCapacityList)
     
     
     
-    // for loop
-    for (item in myEmptyArrayList) {
-        println(item)
+    // looping on arrayList
+    for (items in emptyCapacityList) {
+        println(items)
+    }
+    
+    // looping using iterators
+    // iterators -> to loop through all the different kinds of sequences or iterables
+    var myItr = emptyCapacityList.iterator()
+    while(myItr.hasNext()) {
+        // hasNext()
+        // next()
+        println(myItr.next())
     }
     
     
-    var its = myEmptyArrayList.iterator()
-    
-    while(its.hasNext()) {
-        println(its.next())
-    }
     
     
-    // to clear out the array list completely
-//     myEmptyArrayList.clear()
-//     println(myEmptyArrayList)
-    
-    
-    // retrieve elements in array list
-    println(" Retrieve value - ${myEmptyArrayList.get(2)}")
+    // find index using elements or values
+    println(emptyCapacityList.indexOf("Hundred"))  // 1
+    println(emptyCapacityList.indexOf("Two")) // 0
+    println(emptyCapacityList.indexOf("Thousand")) // -1
     
     
     
-    // to find the first occurence index based on element value, return -1 if not found
-    println(myEmptyArrayList.indexOf("Royals"))
+    // find the last index of element hving multiple occurences
+    println(emptyCapacityList.lastIndexOf("2")) // 3
+    println(emptyCapacityList.lastIndexOf("1")) // 4
+    println(emptyCapacityList.lastIndexOf("100")) // -1
     
-}
+    
+    // clear elements from arrayList, delete all elements
+    emptyCapacityList.clear()
+    println("CLEARED ARRAYLIST ${emptyCapacityList}")
+    
+
+    
+    
+    // PERFORM ALL THE SIMILAR OPERATIONS ABOVE USING arrayListOf() function
+    
+    // 1. Create arrayList using arrayListOf() function, same datatype, empty list, different datatype
+    // 2. Use add(), remove(), removeAt(), for loop, iterator(), indexOf, lastIndexOf(), get(), retrieve using [], set(), update using [], clear()
+   
+	 
+    // same datatype
+    var arrayLists = arrayListOf<Int>(1,2,3)
+    println(arrayLists)
+    
+    // empty list
+    var emptyArrayList = arrayListOf<Int>()
+    println(emptyArrayList)
+    
+    // different datatype list
+    var arrayDiffList = arrayListOf(1,2,3,"4")
+    println(arrayDiffList)
+}    
