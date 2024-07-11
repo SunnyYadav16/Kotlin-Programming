@@ -1,0 +1,48 @@
+fun main () {
+
+ // For/While/ DO WHILE 
+    // TRY / Catch / Throw
+    
+    // LOOPS
+    // DO WHILE LOOP
+    // while -> increment/decrement
+    
+    
+//     do {
+//         // statement to execute multiple times
+//         // increment/decrement
+//     }
+//     while (condition)
+    
+    // do while runs atleast once without checking the condition, even if the condition is later checked as false
+    // while loop always check the condition first and then execute the loop
+    
+    
+    // CASE 1 : When the condition is true in the while loop
+    var myIndex = 1
+    
+    do {
+        println(myIndex)
+        myIndex++
+    }
+    while (myIndex <= 5)
+//     output - 1,2,3,4,5
+    
+    
+    // CASE 2 : WHEN the condition is false in the while loop
+    println()
+    var myIndexValue = 6
+    
+    do {
+        println("New loop value : $myIndexValue")
+        myIndexValue++
+    }
+    while (myIndexValue <= 5) // false
+
+
+
+
+
+
+
+}
