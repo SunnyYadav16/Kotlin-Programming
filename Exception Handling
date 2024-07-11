@@ -1,0 +1,50 @@
+fun main() {
+   
+// Exception Handling
+	// Exceptions - that arises during the runtime of the program that leads to termination of the process
+    // Division by zero
+    // Array Index out of bound
+    // IO Exception
+    // Null Pointer exception
+    // SQL Exception
+    
+    
+    // try - consist of those statement that we think are going to create problems or exception
+    // 		 2. Compulsorilly use catch / finally or both of the code blocks together	
+    // 
+    // catch - use to catch all the exception generated in the try block
+    // finally - it is going to be executed everytime, if exception occurs or not
+    // throw - use to show custom exceptions from the developers side explicitly
+    
+    
+    // Types of Exceptions
+    
+//     1. UNCHECKED EXCEPTIONS
+//     	--> Also called as Runtime Exceptions and extends RuntimeException Class
+//     	--> Occurs when we run the code, or when there is a mistake in the logic
+//     	--> Arithmetic Exception - Division by zero
+//      --> Null Pointer Exception - when trying to access a null object
+//      --> Array Index out of Bound - when trying to access an index that does not exist
+//      --> Security Exceptions - thrown by security managers, to show that there are some violations
+
+    	
+//     	2. CHECKED EXCEPTION
+//     	--> Also called as Compilation Exception and extend Throwable Class
+//     	--> IO Exception - when we try to write or read a file or to memory using streams
+//     	--> SQL Exception - problems when connecting with the database, or if the syntax is wrong
+    
+    	
+    // syntax
+    
+    
+//     	try {
+//             // code that can possible generate exceptions
+//         } catch (e : SomeException) {
+//             // code to run when the exception is generated
+//         } finally {
+//             // always going to run this code
+//         }        
+    
+    
+    
+}
