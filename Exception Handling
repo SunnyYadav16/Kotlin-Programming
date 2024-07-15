@@ -44,7 +44,148 @@ fun main() {
 //         } finally {
 //             // always going to run this code
 //         }        
-    
-    
-    
+
+// SIMPLE TRY CATCH BLOCK
+//     println(tryCatchExample("1.1f"))
+
+// SAme try, MULTIPLE CATCH BLOCK function
+//     multipleCatch()
+
+// Different try catch blocks function
+//     multipleCatchDiff()
+
+// nested try catch block function
+//     	nestedTryBlock("10.5")
+
+// throw keyword function
+    validation()
 }
+
+// SIMPLE TRY CATCH BLOCK
+// fun tryCatchExample(myValue : String) : Int {
+    
+// //     "".toInt()
+//     return try {
+//     	Integer.parseInt(myValue)
+// 	} catch(e : Exception) {
+//         println("Exception is $e")
+//         println("Message is ${e.message}")
+//         0
+//     }
+// }
+
+// Same try, different catch blocks for conditions
+// fun multipleCatch () {
+    
+//     var divisor = 0
+//     var myList = arrayOf(1,2,3,4,5)
+    
+//     try {
+        
+//         var myValue = myList[10]
+//         println("The value is $myValue")
+        
+//         var result = myList[2] / divisor
+// 		println("The result is $result")
+       
+//     } catch (e: ArithmeticException) {
+//         println("Exception handled $e")
+//     } catch (e : ArrayIndexOutOfBoundsException) {
+//         println("Exception generated $e")
+//     } catch (e : Exception) {
+//         println("Exception handled completely $e")
+//     }
+   
+// }
+
+// Different try catch blocks for different conditions
+// fun multipleCatchDiff() {
+    
+//     var divisor = 0
+//     var myList = arrayOf(1,2,3,4,5)
+    
+    
+//     try {
+//         var myValue = myList[2]
+//         println("The value is $myValue")   
+//     } catch (e : ArrayIndexOutOfBoundsException) {
+//         println("Exception generated $e")
+//     } catch (e : Exception) {
+//         println("Exception handled completely $e")
+//     } finally {
+//         println("Finally Block 1")
+//     }
+    
+//     try {
+//       	var result = myList[2] / divisor
+// 		println("The result is $result")  
+//     } catch (e: ArithmeticException) {
+//         println("Exception handled $e")
+//     } catch (e : Exception) {
+//         println("Exception handled completely $e")
+//     } finally {
+//         println("Finally Block 2")
+//     }
+// }
+
+
+
+// NESTING TRY CATCH BLOCK
+// try {
+//     // outer try block
+//     try {
+//         // inner try block
+//     } catch () {
+//         // inner catch block
+//     } finally {
+//         // inner finally block
+//     }
+// } catch () {
+//     // outer catch block
+// } finally {
+//     // outer finally block
+// }
+
+// fun nestedTryBlock (myValue : String) {
+    
+//     try {
+//         // outer try block
+//         // convert into diff datatype
+//         var number = Integer.parseInt(myValue)
+//         println("My number is $number")
+        
+//         try {
+//             // inner try block
+//             var result = number / 0
+//             println("The result is $result")
+            
+//         } catch (e : ArithmeticException) {
+//             // inner catch block
+//             println("Inner catch block : $e")
+//         }
+        
+//     } catch (e : NumberFormatException) {
+//         println("Outer Exception : $e")
+//     } finally {
+//         println("All exceptions handled")
+//     }
+// }
+
+
+// throw - used to throw from the developers side
+
+fun validation() {
+    
+    var age = 21
+    
+    if (age > 21) {
+        println("You can enter")
+    } else {
+        throw Exception("You cannot enter, you are too young")
+    }
+}
+
+
+
+
+
