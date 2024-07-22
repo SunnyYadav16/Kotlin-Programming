@@ -1,0 +1,137 @@
+// KOTLIN NULL and NON NULLABLE Types
+
+// KOTLIN NULL SAFETY CHECK
+// 1. NULLABLE VALUES
+// 2. NON NULLABLE VALUES
+
+
+
+//1. NULLABLE DATATYPES - declared using "?" after the datatype
+// var myValue : String? = "Hello"
+// fun main () {
+//     var myValue : String? = "Hello"
+//     println("My value is : $myValue")
+    
+//     myValue = null
+//     println("Updated value is : $myValue")
+// }
+
+
+// 2. NON NULLABLE DATATYPE - declared without using "?" after the datatype
+// var myValue : String = "Hello"
+// fun main () {
+//     var myValue : String = "Hello"
+//     println("My value is : $myValue")
+    
+//     // will give out error if "?" not used
+//     myValue = null
+//     println("Updated value is : $myValue")
+// }
+
+
+// SMART CAST (CHECK FOR NULLABILITY)
+// TO USE SMART CAST WE NEED TO CHECK IT IN THE IF ELSE EXPRESSION
+
+// fun main() {
+    
+//    	var myValue : String? = "Hello"
+//     println("My value is : $myValue")
+
+// 	if (myValue != null) {
+//         println("My length of the var is : ${myValue.length}")
+//     }  else {
+//         println(-1)
+//     }
+    
+//     myValue = null
+//     println("Updated value is : $myValue")
+    
+//     if (myValue != null) {
+//         println("My length of the var is : ${myValue.length}")
+//     }  else {
+//         println(-1)
+//     }
+// }
+
+
+
+// ACCESS MODIFIERS
+// 1. PUBLIC  (default) - public - by defalt it can be accessed anywhere from the project
+// 2. PROTECTED - protected - declared inside class and can be access within the subclass as well but cannot be access from the objects or another module
+// 3. PRIVATE - private - declared inside class and can be used only in that class, cannot be accessed in child class, or objects or from another module.
+// 4. INTERNAL - internal - declared inside class and can be accessed with in the subclass and from another module as well.
+
+
+// public
+// public var myValue = 10
+
+// private
+// private var myValue = 100
+
+// protected
+// protected var myValue = 1000
+
+// internal
+// internal var myValue = 10000
+
+
+// TOP LEVEL DECLARATION
+var publicValue = 10 // public - accessible from everywhere
+
+internal var internalValue = 100 // internal - can only be limited same module (across multiple files)
+
+private var privateValue = 1000 // private - can be access from anywhere in the file
+
+// cannot use protected keyword at top level declaration
+// protected var protectedValue = 10000
+
+// class defined - final type class is created and cannot be changed once defined
+// open keyword to change to values in the child class
+open class BaseClass {
+    
+    var myValue = 1  // public
+    
+    private var myValue2 = 2
+    
+    protected open var myValue3 = 3
+    
+    internal var myValue4 = 4
+}
+
+
+class ChildClass : BaseClass() {
+//     myValue, myValue3, myValue4 can be used or are visible
+    // myValue2 cannot be used as it is private
+    
+    // override keyword is used to change the value of the baseclass variable in the child class
+    override var myValue3 = 300
+    
+    fun printParentVariable() {
+    	println("VAL 1: $myValue, VAL 3: $myValue3, VAL 4 : $myValue4")    
+    }
+    
+    
+}
+
+
+
+fun main () {
+    
+    var baseObj = BaseClass()
+//     println(baseObj.myValue)
+//     println(baseObj.myValue2)
+//     println(baseObj.myValue3)
+//     println(baseObj.myValue4)
+    
+//     1,3,4 - 2
+    
+    var childObj = ChildClass()
+    childObj.printParentVariable()
+    
+    
+    println("PUBLIC : $publicValue")
+    
+    println("PRIVATE: $privateValue")
+    
+    println("INTERNAL : $internalValue")
+}
