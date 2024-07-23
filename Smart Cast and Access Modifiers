@@ -76,14 +76,20 @@
 
 
 // TOP LEVEL DECLARATION
-var publicValue = 10 // public - accessible from everywhere
 
-internal var internalValue = 100 // internal - can only be limited same module (across multiple files)
+// public - can be accessed from anywhere inside the project
+public var publicValue = 100  // public is by default
 
-private var privateValue = 1000 // private - can be access from anywhere in the file
+// private - can be accessed from only this file 
+// For Example - private declaration is done in file1.kt, then this var cannot be accessed in file2.kt
+private var privateValue = 101
 
-// cannot use protected keyword at top level declaration
-// protected var protectedValue = 10000
+// internal - can be accessed in this file as well as other files in the same module
+// For Example - internal declaration done in Mod1File1.kt, can be accessed in Mod1File2.kt, cannot be accessed from Mod2File1.kt
+internal var internalValue = 202
+
+// protected - TOP DECLARATION IS NOT SUPPORTED
+
 
 // class defined - final type class is created and cannot be changed once defined
 // open keyword to change to values in the child class
@@ -93,9 +99,9 @@ open class BaseClass {
     
     private var myValue2 = 2
     
-    protected open var myValue3 = 3
+    protected var myValue3 = 3
     
-    internal var myValue4 = 4
+    internal open var myValue4 = 4
 }
 
 
@@ -103,16 +109,9 @@ class ChildClass : BaseClass() {
 //     myValue, myValue3, myValue4 can be used or are visible
     // myValue2 cannot be used as it is private
     
-    // override keyword is used to change the value of the baseclass variable in the child class
-    override var myValue3 = 300
-    
-    fun printParentVariable() {
-    	println("VAL 1: $myValue, VAL 3: $myValue3, VAL 4 : $myValue4")    
-    }
-    
-    
+    override var myValue4 = 100
+   
 }
-
 
 
 fun main () {
@@ -121,17 +120,16 @@ fun main () {
 //     println(baseObj.myValue)
 //     println(baseObj.myValue2)
 //     println(baseObj.myValue3)
-//     println(baseObj.myValue4)
-    
-//     1,3,4 - 2
-    
+    println(baseObj.myValue4)
+        
     var childObj = ChildClass()
-    childObj.printParentVariable()
+    println(childObj.myValue4)
     
     
-    println("PUBLIC : $publicValue")
+    println("Public Value : $publicValue")
+    println("Private Value : $privateValue")
+    println("Internal Value : $internalValue")
     
-    println("PRIVATE: $privateValue")
     
-    println("INTERNAL : $internalValue")
+    
 }
