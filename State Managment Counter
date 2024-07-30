@@ -1,0 +1,107 @@
+
+// COMPOSITION / RECOMPOSITION
+
+// 1. COMPOSITION - First time running of the application or the Composable Function
+
+// 2. RECOMPOSITION - When the composables functions are called again with the updated data
+//  that is to be displayed on the UI.
+
+
+
+// STATE MANAGEMENT
+// How the data is modified and how it interacts with the USER Interface.
+// To store the data for sometime while the application is running, until it gets destroyed.
+
+// Default - JETPACK COMPOSE
+// 1. Which UI to update on data change.
+// 2. Refresh/Rebuild the composables dependent on this state change
+
+// Intelligent Recomposition - Compose automatically recomposes the composable functions and
+// not rebuilds the whole UI.
+
+
+
+// Composition / Recomposition
+
+// 1. First time running of the application is called composition
+
+// 2. When the composable functions are called again with the updated data to present on the UI
+    // it is called Recomposition
+
+
+// STATE
+ // How the data is modified when interacted with the USer Interface.
+// 1. when ever we change the data, it is going to be called as recomposed function
+// 2. JETPACK COMPOSE -
+    // 1. which UI to update
+    // 2. Which composable are dependent on the state used.
+// 3. Intelligent Recomposing - compose will automatically recompose the particular UI on which
+    // the state depends and not the whole UI application
+
+
+package com.example.statecounter
+
+import android.os.Bundle
+import android.util.Log
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import com.example.statecounter.ui.theme.StateCounterTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            StateCounterTheme {
+                NotificationCounter()
+            }
+        }
+    }
+}
+
+
+@Composable
+fun NotificationCounter() {
+
+    var counter = rememberSaveable { mutableStateOf(0) }
+
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+
+        // recomposed
+        Text(text = "You have successfully sent ${counter.value} notifications")
+
+        Button(onClick = {
+            counter.value++
+            Log.i("BUTTON", "BUTTON has been clicked and value is ${counter.value}")
+        })
+        {
+            Text(text = "Send notification")
+        }
+    }
+}
+
+
+
+// DIFFERENT LOGGING STATEMENT AVAILABLE
+
+// Log.i(tag, mssg) = informational messages
+// Log.d(tag, mssg) = debug the information
+// Log.e(tag, mssg) = to show error mssg
+// Log.w(tag, mssg) = to display warning mssg
+// Log.wtf(tag, mssg) = to display critical error (What a terrible failure)
