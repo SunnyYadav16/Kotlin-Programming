@@ -1,0 +1,78 @@
+package com.example.statecounter
+
+import kotlin.math.round
+
+fun main() {
+
+    // LAMBDA FUNCTION
+
+    // Lambda functions are those functions that does not have a name.
+    // Also can be said as Nameless Functions
+    // The last line of the lambda function will be its return value
+
+
+//    var myVar: (x: Int, y: Int) -> Int = ::sum
+//    println(myVar(1,2))
+
+    // SINGLE LINE LAMBDA FUNCTION WITH PARAMETERS
+    var lambda1 = {x : Int, y: Int -> x + y }
+    println(lambda1(100, 200))
+
+
+    // SINGLE LINE LAMBDA FUNCTION WITHOUT PARAMETERS
+    var lambda2 = { println("THIS IS LAMBDAS") }
+    lambda2()
+
+    //MULTI LINE LAMBDA FUNCTION WITHOUT PARAMETERS
+    var multiLineLambda = {
+
+        println("Hello World")
+        var a = 3 + 4
+        a
+    }
+    println(multiLineLambda())
+
+
+    //MULTI LINE LAMBDA FUNCTION WITH PARAMETERS
+    var multiLineLambdaParams = {
+
+        x : Int, y : Int ->
+
+        println("Hello World")
+        var a = x + y
+        a
+    }
+    println(multiLineLambdaParams(101, 202))
+
+    var diff = {x : Int, y : Double -> round(x - y)}
+    println(diff(3,1.379))
+
+
+
+    // Without specific type declaration lambda
+    var singleParamLambda = {x : Int -> x * x}
+    println(singleParamLambda(5))
+
+    // with specific type declaration lambda
+    var singleParamLambda2 : (Int) -> Int = {y -> y * y * y}
+    println(singleParamLambda2(3))
+
+    // access variables values passed in argument
+    var sayHello = {mssg : String -> println("Say Hello to $mssg") }
+    sayHello("Royal")
+
+    // access variables values passed in argument with specific type declaration lambda
+    var sayHello2 : (String) -> Unit = {mssg -> println("Say Hello to $mssg") }
+    sayHello2("Technosoft")
+
+
+    // Single Params Simplification ("it" var is present by default in kotlin, which points to the incoming parameter value)
+    var singleParamLambdaVar : (Int) -> Int = {it * it}
+    println(singleParamLambdaVar(10))
+
+    // MULTIPLE PARAMS ARE NOT SUPPORTED FOR THE DEFAULT "it" variable
+    var multipleParamLambdaVar2 : (Int, Int) -> Int = {x, it ->  x * it}
+    println(multipleParamLambdaVar2(1, 2))
+
+}
+
