@@ -1,0 +1,58 @@
+package com.example.statecounter
+
+
+fun main() {
+
+//    println( sum(5,5))
+//    println(diff(10,5))
+
+    val myVariable: (Int, Int) -> Int = ::sum
+
+//    myVariable =  {
+//        return x + y
+//    }
+
+//    println(myVariableFunc(100.0,200.0)) // 20000.0
+//    myVariableFunc.invoke(100.0, 3.0) // 300.0
+
+
+    // HIGHER ORDER FUNCTIONS
+    // Any function that takes a function as an argument/parameter or return a function as a value in the return statement or does both of these
+
+    var returnedFunc = calculate(myVariable)
+    println(returnedFunc(3,3))
+
+
+}
+
+//fun mul(x : Double, y : Double) : Double {
+//    return x * y
+//}
+
+fun sum(x : Int, y : Int) : Int {
+    return x + y
+}
+
+//fun diff(x : Int, y : Int) : Int {
+//    return x - y
+//}
+
+
+// Functions takes in params
+//fun calculate(x : Int, y : Int, test : (Int, Int) -> Int ) : Int {
+//
+////    var result = test(x, y)
+////    return result  // 6
+//
+//    return test(x, y)
+////    test(x, y)
+//    // sum (x, y) -> return x + y
+//    // (6)
+////    return 6
+//
+//}
+
+fun calculate(test : (Int, Int) -> Int ) : (Int, Int) -> Int {
+
+    return test
+}
