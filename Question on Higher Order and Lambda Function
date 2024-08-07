@@ -1,0 +1,58 @@
+// LAMBDA and HIGHER ORDER FUNCTIONS
+    
+
+// Question 1
+
+// 1. Create a func that takes a string value as input and returns a func
+// 2. Pass these values - add, sub, mul, div
+// 3. If any other values are passed, throw Exception.
+// 4. If any value is selected, create a lambda function to return it for the selected operation.
+// 5. Once the selection is done, return the function that was selected.
+// 6. Perform the calculation of the passed value and print the output.
+
+fun operationFun(inputValue : String) : (Int, Int) -> Int {
+    
+    return when (inputValue) {
+        "add" -> {x, y -> x + y}
+        "sub" -> {x, y -> x - y}
+        "mul" -> {x, y -> x * y}
+        "div" -> {x, y -> x / y}
+        else -> throw Exception("Invalid Operation")
+    }
+}
+
+fun main() {
+    
+    var additionOp = operationFun("add")
+    println(additionOp(10, 5))
+    
+    var multiplyOp = operationFun("mul")
+    println(multiplyOp(5, 5))
+}
+
+
+
+
+// Question 2
+
+// 1. Create a function that takes 3 parameters, x, y, lambda function as a parameter and returns an Integer value
+// 2. In main function, create these add, sub, mul, div - Create lambdas functions for all these operations
+// 3. Then call the function created in step 1 and pass all the diff values of parameters and then return the answer.
+// 4. Print the output
+
+fun calculate(a: Int, b: Int, operation: (Int, Int) -> Int): Int {
+    return operation(a, b)
+}
+
+fun main() {
+    val addition: (Int, Int) -> Int = { x, y -> x + y }
+    val subtraction: (Int, Int) -> Int = { x, y -> x - y }
+    val multiplication: (Int, Int) -> Int = { x, y -> x * y }
+    val division: (Int, Int) -> Int = { x, y -> x / y }
+
+    val addResult = calculate(10, 5, addition)
+    println("Addition result: $addResult") 
+    
+    val subtractResult = calculate(10, 5, subtraction)
+    println("Subtraction result: $subtractResult") 
+}
