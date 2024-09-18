@@ -1,0 +1,126 @@
+// variables
+// data types
+	// 1. Simple types - string, int, float, etc
+	// 2. Complex datatypes - list, set, maps (dictionaries)
+		// -> sub complex types.
+
+
+// VARIABLES - data store/capture until we dont require it.
+
+fun main() {
+    
+    println("Hello, my name is Sunny")  // \n
+    //print("Hello, my name is Sunny Yadav")  // no \n
+    //print("Hello, my name is Sunny")
+    
+    
+    // python - first_name - snake case convention
+    // kotlin - firstName, addressStreetZipcodeApartment - camelCase convention
+    
+    
+    // keyword variableName : DataType = value
+    val firstName : String = "Sunny"
+    val lastName : String = "Yadav"
+    // declare a value - val (immutable variable - cannot change the value after assignment)
+    
+    println(firstName)
+    println(lastName)
+    
+    // JAVA
+    // string + string = string+string
+    // int+int = int_value
+    // string+int = string+int
+    
+	// VAR KEYWORD - Mutable type variable, whose value can be changed.
+    var companyName : String = "Royal"
+    
+    // string concatenation
+    println("Hello, my name is " + firstName + " " + lastName + " works at " + companyName)
+    
+    
+    companyName = "UnEmployed"
+    // Kotlin specific method
+    println("Again, hello from $firstName $lastName works at $companyName")
+    
+    
+    //BENEFITS
+    //1. Develop 2011, Jetbrains
+	//    2. 2016, Google as an official language android development.
+ 	//   3. logical code - diff file, xml - display, configuration
+  	//  4. XML, JETPACK COMPOSE - library support, material themes, functions.
+  	//  5. Logic and UI will be displayed directly.
+  	//  6. Kotlin - conscise and fewer lines of code, less heavy app, use less memory, less crash chances, stable, robust application
+   	// 7. Jetpack Compose is not fully developed.
+
+    
+    
+    
+    //1. Declare a mutable type variable of datatype Stirng.
+    //2. Declare a immutable type variable of datatype Stirng.
+//    3. Print both the variables on separate lines.
+  //  4. Assign a new value to the mutable variable.
+   // 5. Re print the value of the mutable variable.
+    
+    
+    
+    // DATATYPES
+    
+    // 1. INTEGERS
+    // Syntax - var myAge : Int = 24
+    
+    // SUB DATA TYPES.
+    	// 1. BYTE (8 bits) = 2^8 = 256
+    	// 		a. Min = -128, 0
+    	// 		b. Max = +127
+    	// 		c. var myAge : Byte = 100
+    	// 
+        // 2. Short (16 bits) = 2^16 = calculate
+        // 		a. Min = -32768, 0
+        // 		b. Max = 32767
+        // 		c. var myAge : Short = 7000
+        // 
+        // 3. Int (DEFAULT) (32 bits) - 2^32 = 
+        // 		a. Min = -2^31, 0
+        // 		b. Max = 2^31 - 1
+        // 		c. var myAge : Int = 24
+        // 
+        // 4. Long (64 bits) - 2^64
+       	//  	a. Min = -2^63
+    	//		b. Max = 2^63 - 1
+    
+    // TYPE INFERENCE
+    
+    var phoneNumber = "99293912312"
+    
+  	println(phoneNumber)
+    
+    // 1. val myNumber = 100000 - INT
+    // 2. val myNumber = 0 - Byte
+    // --> val myNumber = -1 - Byte
+    // 3. val myNumber = -100 - Byte
+    // 4. val myNumber = 1000 - Short
+    // 5. val myNumber = 10000000000 - Long
+    
+    
+    // 2. NUMERICAL VALUES / DECIMAL NUMBERS
+    // a. FLOAT (32 bits)
+    // 		-> Precision (6-7 digits) - 1.923435464657 = 1.9234255
+    // 		-> var floatNumber : Float = 1.923435464657f --> FLOAT
+    // 		-> var floatNumber = 1.923435464657f  ---> FLOAT
+    // 		-> var floatNumber = 1.923435464657  --> DOUBLE
+    
+    // b. Double (64 bits)
+    // 		-> Precision (15-17 digits) - 1.9234354646571562345890 - 1.92343546465715623
+    // 		-> var floatNumber : Double = 1.923435464657
+    // 		-> var floatNumber = 1.923435464657
+    	
+    
+    var floatNumber = 1.923435464657f
+    var doubleNumber = 1.879796734673489674564
+    println(floatNumber)
+    println(doubleNumber)
+    
+    
+    
+    
+}
