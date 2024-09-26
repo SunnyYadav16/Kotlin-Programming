@@ -123,4 +123,177 @@ fun main() {
     
     
     
+    // BOOLEANS
+    // a. True
+    // b. False
+    // var myBoolean : Boolean = true
+    // var myBoolean = true/false
+    
+    
+    
+    // OPERATORS
+    // 1. LOGICAL OR OPERATOR (||) - ONLY 1 STATEMENT NEEDS TO BE CORRECT OR TRUE.
+    // a || b || c -> True, if either a,b or c is true, else if all false, then output is false
+    // 2. LOGICAL AND OPERATOR (&&) - ALL THE STATEMENTS NEED TO BE TRUE FOR THE OVERALL CONDITION TO BE TRUE
+    // a && b && c -> True, a and b and c are all true/false, else always false
+    // 3. LOGICAL NOT OPERATOR (!) - REVERSE THE STATEMENT STORED IN THE VARIABLE OR THE VALUE.
+    // a - true, !a - false and vice versa
+    
+    
+    var myTrue = true
+    var myFalse = false
+    
+    println(myTrue || myFalse)  // true
+    println(myTrue || myTrue)  // true
+    println(myFalse || myFalse) // false
+    println(myTrue && myFalse) // false
+    println(myTrue && myTrue) // true
+    println(myFalse && myFalse) // false
+    println(!myTrue) // false
+    println(!myFalse) // true
+    println(!(myTrue || myTrue)) // false
+    println(!(myTrue && myFalse)) // true
+
+    
+    
+    
+    // CHARACTER
+    // Only accepts single letter, and that too in single quotes
+    // 'c', 'g'
+    // var myVariable : Char = 'a'
+    // var myVariable = 'a'
+    
+    
+    // STRING
+    // Can accepts multiple letters and in double quotes
+    // "Royal Tech"
+    // var myString : String = "Royal"
+    // var myString = "Royal"
+    
+    
+    
+    
+    // UNSIGNED INTEGERS
+    // SUB CATEGORY OF INTEGERS (WE WILL INCLUDE ONLY POSITIVE VALUES)
+    
+    // UByte (Unsigned bytes) - 8 bits - 2 ^ 8 = 256
+    // Range = 0, 255
+    // var myVariable : UByte = 100
+    // 
+    // UShort (Unsigned Short) - 16 bits - 2 ^ 16 = 65535
+	// Range = 0, 65534
+    // var myVariable : UShort = 10000
+    
+    // UInt (Unsigned Integers) - 32 bits - 2 ^ 32
+    // Range = 0, 2^32 - 1
+    // var myVariable : UInt = 1000000
+    // 
+    // ULong (Unsigned Long) - 64 bits - 2 ^ 64
+    // Range = 0, 2^64 - 1
+    // var myVariable : ULong = 10000000000
+    
+    
+    
+    
+    
+    // CONDITIONAL STATEMENTS (IF, ELSE, ELSE IF)
+    
+    
+    
+   
+    // ARITHMETIC OPERATORS
+    // 1. == (EQUALS TO) 
+    // 2. > (GREATER THAN)
+    // 3. < (LESS THAN)
+    // 4. >= (GREATER THAN EQUAL TO)
+    // 5. <= (LESS THAN EQUAL TO)
+    
+    // = (ASSIGNMENT OPERATOR)/ == (ARITHMETIC OPERATOR)
+    
+    
+    
+    
+    var myAge = 20
+    // can we go into a bar? 18> - yes, else no
+    
+    
+    if (myAge > 18) {
+        println("Yes")
+    } else {
+        println("No")
+    }
+    
+    
+    // 1. age = 18,
+    // age > 18 - bar enter, yes you can enter.
+    // age > 40 - too old,
+    // age < 18 - no, cannot enter
+    
+    
+    
+    // USER INPUT
+    
+    //input("Please enter value: ") - string
+    
+   // println("Please enter value: ")
+    //readln() - string - Int, Float, Double
+    
+   	// ReadLn() will give out error in kotlin playground, test the code in Android Studio.
+    
+    
+    //var myName = readln()- sunny, 1, 0.5, c - string
+    //println(myName)
+   
+   	
+   	//var myAge = input().toInt()
+    
+  //  var myAge = input()
+    //var intMyAge = myAge.toDouble()
+   
+   	
+   
+   	// 1. Create a print statement to prompt the user for a value of his age
+    // 2. store the value in a variable called inputString of datatype string.
+    // 3. Convert the value into INT datatype and store it into another variable called intInputString.
+    // 4. Create a new variable called multiplier and set its value to 10.
+    // 5. Perform multiplication with the variables - multiplier and intInputString.
+    // 6. Print the output of the multiplication.
+   
+   
+   // RANGE FUNCTION
+   
+   	// 1,2,3,4,5,.....100
+    
+    
+    var myRange = 1..100
+//    var myCheckNumber = 1
+    
+    println(myRange)
+    
+    if (myRange.contains(18)) {
+        println("True exist")
+    } else {
+        println("False not exist")
+    }
+    
+    
+    
+    // ALTERNATIVE OF READLN() FUNCTION
+    
+    import java.util.Scanner
+    
+    var reader = Scanner(System.`in`)
+    
+    print("Enter value")
+    
+    // String value
+    var myName : String = reader.next()
+    
+    // Int value
+    var myAge : Int = reader.nextInt()
+    
+    
+    println("$myName and $myAge")
+    
+    
 }
