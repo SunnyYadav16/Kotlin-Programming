@@ -1,0 +1,94 @@
+// INHERITANCE
+
+// BASIC INHERITANCE
+// Denoted by a colon ( : ) after declaring the class
+
+// Classes and functions are by default "final" in Kotlin, meaning we cant override/overwrite or
+// inherit the data
+// OPEN Keyword
+
+// SUPER Keyword
+// Will call the parent function and runs the code block mentioned in the parent class
+
+// Child class can have new property and methods that parent class does not have
+
+// Subclasses can override the methods and functionality of the parent class using the override keyword
+
+
+
+// PARENT
+open class Animal {
+    open fun sound() {
+        println("Animal is making sound")
+    }
+
+    open fun walk() {
+        println("Animal Has four legs.")
+    }
+}
+
+
+// CHILD / Derived class
+class Dog () : Animal() {
+    override fun sound() {
+        println("The dog is barking")
+    }
+
+    fun tail() {
+        println("Dog is happy and wagging its tail")
+    }
+}
+
+
+// CHILD
+class Cat : Animal() {
+    override fun sound() {
+        println("The cat is meowing")
+    }
+
+    fun tail() {
+        println("Cat is happy and purring with its tail.")
+    }
+}
+
+
+// CREATE A new class that inherits from the Animal class and uses both the functions of it.
+// Sound and walk should be printing the same things as in the Animal class
+
+// Parent class's function should run and print the output of sound and walk
+// sound and walk should print "ANIMAL CHILD CLASS SOUND", "ANIMAL CHILD CLASS WALK" in the next line.
+class AnimalChild : Animal() {
+    override fun sound() {
+        super.walk()
+        println("ANIMAL CHILD CLASS SOUND")
+    }
+
+    override fun walk() {
+        super.sound()
+        println("ANIMAL CHILD CLASS WALK")
+    }
+}
+
+
+fun main() {
+
+    // OBJECT of ANIMAL CLASS
+    val animal = Animal()
+    animal.sound()
+    animal.walk()
+
+    // OBJECT of DOG CHILD CLASS
+    val dog = Dog()
+    dog.sound()
+    dog.tail()
+
+    // OBJECT OF CAT CHILD CLASS
+    val cat = Cat()
+    cat.sound()
+    cat.tail()
+
+    val animalChildClass = AnimalChild()
+    animalChildClass.sound()
+    animalChildClass.walk()
+
+}
