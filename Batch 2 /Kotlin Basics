@@ -294,6 +294,110 @@ fun main() {
     
     
     println("$myName and $myAge")
+
+
+
+
+// WHEN STATEMENT
     
+    // if - else
+    // switch case - C
+    // match case - Python 3.10
+    // when case syntax
+    // when (condition) {}
+    
+    
+    // WHEN as a STATEMENT
+    // Use when as a statement when the piece of code needs to be executed without storing the result for future use.
+    
+    var var1 = 2
+    var var2 = 0
+    
+    when (var1) { // when (1)
+        
+        //case 1: 
+        	//print("hi")
+        //case 2:
+        	//println("bye")
+        //default:
+        
+        1 -> var2 = 100
+        2 -> var2 = 200
+        // default case
+        else -> println("No successful case")
+    }
+    
+    println(var2)
+    
+
+    // WHEN as an EXPRESSION    
+    // Use when as a expression when the piece of code needs to be executed with storing the result for future use.
+
+    var monthOfYear = -9 // May
+    
+    // 1 - Jan, 10 - Oct, 8 - Aug
+    
+    var month = when (monthOfYear) {
+        1 -> "Jan"
+        2 -> "Feb"
+        3 -> "Mar"
+        4 -> "Apr"
+        5 -> "May"
+        6 -> "June"
+        7 -> "July"
+        8 -> "Aug"
+        9 -> "Sep"
+        10 -> "Oct"
+        11 -> "Nov"
+        12 -> "Dec"
+        // default case
+        else -> "No month name present"
+    }
+    
+    
+    println("my month name is ${month}")
+    
+    
+    // Use when case to check for a value between range
+    // var = int_value (1-100)
+    // 1-20 - lower
+    // 21-50 - middle
+    // 51-100 - higher
+    // else - out of bound
+    
+    var num = 15
+	when (num) {
+       in 1..20 -> print("Lower")
+       in 21..50 -> print("middle")
+       in 51..100 -> print("higher")
+       else -> print("Out of bound")
+    }
+     
+ 
+ 
+ 	// WHILE LOOP
+    
+    // var initialize
+    // var check condition
+    // var value increment/decrement
+    // syntax - while () {}
+    // break - to breakout of the loop without running further code.
+    
+    println()
+    var counter = 0
+ 
+ 	while (counter < 10) {
+        println(counter)
+        
+        if (counter == 5) {
+            println("Condition true")
+            break
+        }
+        
+        //counter++ // only increment value will be 1
+        counter = counter + 1 // incrment value can be anything
+		//counter += 5
+    }
+
     
 }
